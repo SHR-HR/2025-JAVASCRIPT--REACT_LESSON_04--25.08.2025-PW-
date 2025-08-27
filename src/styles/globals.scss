@@ -1,0 +1,39 @@
+// Подключение файла с CSS-переменными (переменными темы)
+@use './variables';
+
+// Глобальный сброс стилей для всех элементов
+* { 
+  // Убираем внешние отступы у всех элементов
+  margin: 0; 
+  
+  // Убираем внутренние отступы у всех элементов
+  padding: 0; 
+  
+  // Устанавливаем box-sizing: border-box для всех элементов
+  // Это означает, что padding и border включаются в общую ширину и высоту элемента
+  box-sizing: border-box; 
+}
+
+// Стили для тела документа (body)
+body {
+  // Набор шрифтов с fallback-ами (запасными вариантами)
+  // system-ui - системный шрифт ОС
+  // -apple-system - системный шрифт Apple
+  // Segoe UI - системный шрифт Windows
+  // Roboto - шрифт Google
+  // Arial - стандартный sans-serif шрифт
+  // Helvetica Neue, Helvetica - шрифты для macOS
+  // sans-serif - общий запасной вариант без засечек
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  
+  // Фон тела документа использует CSS-переменную --bg
+  // (меняется в зависимости от темы - светлая/тёмная)
+  background: var(--bg);
+  
+  // Цвет текста использует CSS-переменную --text
+  // (меняется в зависимости от темы - светлая/тёмная)
+  color: var(--text);
+}
+
+
+
